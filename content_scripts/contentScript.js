@@ -25,10 +25,10 @@ const showImagePopup = () => {
     // Create an image element
     const img = document.createElement('img');
   
-    // Generate a random number between 1 and 8 to select the image
-    const randomImageNumber = Math.floor(Math.random() * 8) + 1;
+    // Generate a random number between 1 and 17 to select the image
+    const randomImageNumber = Math.ceil(Math.random() * 17); 
     // Set the image source
-    img.src = `chrome-extension://__MSG_@@${appId}/images/image${randomImageNumber}.png`; //production liecpphadjpakilbmffpdghjahdgaaje
+    img.src = `chrome-extension://__MSG_@@${appId}/images/${randomImageNumber}.png`;
     
     var randomSide = Math.ceil(Math.random() * 4); // 1 - bottom, 2 - top, 3 - right down, 4 right up
    
@@ -126,7 +126,7 @@ const showImagePopup = () => {
                 img.remove();
                 isPopupInProgress = false;
             }, 1000);
-        }, 1000);
+        }, 1500);
     };
   };
   

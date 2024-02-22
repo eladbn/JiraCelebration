@@ -9,6 +9,7 @@ let tempDoneItems = -1;
 let debug = false;
 
 let isPopupInProgress = false;
+const appId = chrome.runtime.id;
 
 // Function to create and show the image popup
 const showImagePopup = () => {
@@ -27,7 +28,7 @@ const showImagePopup = () => {
     // Generate a random number between 1 and 8 to select the image
     const randomImageNumber = Math.floor(Math.random() * 8) + 1;
     // Set the image source
-    img.src = `chrome-extension://__MSG_@@bnebjdinigacahlmpoibiejffbmlakgh/images/image${randomImageNumber}.png`;
+    img.src = `chrome-extension://__MSG_@@${appId}/images/image${randomImageNumber}.png`; //production liecpphadjpakilbmffpdghjahdgaaje
     
     var randomSide = Math.ceil(Math.random() * 4); // 1 - bottom, 2 - top, 3 - right down, 4 right up
    
